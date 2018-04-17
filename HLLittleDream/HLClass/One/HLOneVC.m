@@ -27,6 +27,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self creatTableView];
+    self.view.backgroundColor = KRandomColor;
 }
 
 - (void)creatTableView
@@ -57,6 +58,7 @@
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
     cell.textLabel.text = self.dataArray[indexPath.row];
+    cell.backgroundColor = KRandomColor;
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
