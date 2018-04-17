@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = KRandomColor;
+    self.title = @"高德模仿百度地图";
 }
 
 

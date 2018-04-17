@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "HLTabBarController.h"
-
+#import "HLHHRouter.h"
 @interface AppDelegate ()
 
 @end
@@ -19,7 +19,12 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [self addTabBar];
+    [self HHRouter];
     return YES;
+}
+- (void)HHRouter
+{
+   [HLHHRouter HHRouterMap];
 }
 - (void)addTabBar{
     HLTabBarController *tabbar = [[HLTabBarController alloc] init];

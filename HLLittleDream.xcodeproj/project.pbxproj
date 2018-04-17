@@ -14,6 +14,8 @@
 		4E95E14F20720E7700E82B66 /* HLBaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E95E14E20720E7700E82B66 /* HLBaseTableView.m */; };
 		4E95E15220720E8700E82B66 /* HLBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E95E15120720E8700E82B66 /* HLBaseView.m */; };
 		4E95E162207220B000E82B66 /* GaoDeToBaiDuMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E95E161207220B000E82B66 /* GaoDeToBaiDuMap.m */; };
+		4EB2A8E42085EF1300939D38 /* HLHHRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB2A8E32085EF1300939D38 /* HLHHRouter.m */; };
+		4EB2A8F32085FC4D00939D38 /* HLPayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB2A8F22085FC4D00939D38 /* HLPayVC.m */; };
 		4ECB202B2071C2CA00102D02 /* HLLittleDreamTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ECB202A2071C2CA00102D02 /* HLLittleDreamTests.m */; };
 		4ECB20362071C2CA00102D02 /* HLLittleDreamUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ECB20352071C2CA00102D02 /* HLLittleDreamUITests.m */; };
 		4ECB20502071C32000102D02 /* HLLittleDream.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4ECB20442071C32000102D02 /* HLLittleDream.xcdatamodeld */; };
@@ -68,6 +70,11 @@
 		4E95E15120720E8700E82B66 /* HLBaseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLBaseView.m; sourceTree = "<group>"; };
 		4E95E160207220B000E82B66 /* GaoDeToBaiDuMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GaoDeToBaiDuMap.h; sourceTree = "<group>"; };
 		4E95E161207220B000E82B66 /* GaoDeToBaiDuMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GaoDeToBaiDuMap.m; sourceTree = "<group>"; };
+		4EB2A8E22085EF1300939D38 /* HLHHRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HLHHRouter.h; sourceTree = "<group>"; };
+		4EB2A8E32085EF1300939D38 /* HLHHRouter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLHHRouter.m; sourceTree = "<group>"; };
+		4EB2A8E52085EF8800939D38 /* HHRouterHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHRouterHeader.h; sourceTree = "<group>"; };
+		4EB2A8F12085FC4D00939D38 /* HLPayVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HLPayVC.h; sourceTree = "<group>"; };
+		4EB2A8F22085FC4D00939D38 /* HLPayVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLPayVC.m; sourceTree = "<group>"; };
 		4ECB200B2071C2C900102D02 /* HLLittleDream.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HLLittleDream.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ECB201F2071C2CA00102D02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4ECB20262071C2CA00102D02 /* HLLittleDreamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HLLittleDreamTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,6 +163,24 @@
 				4E95E161207220B000E82B66 /* GaoDeToBaiDuMap.m */,
 			);
 			path = GaoDeToBaiDu;
+			sourceTree = "<group>";
+		};
+		4EB2A8E12085EF0000939D38 /* HHRouter */ = {
+			isa = PBXGroup;
+			children = (
+				4EB2A8E22085EF1300939D38 /* HLHHRouter.h */,
+				4EB2A8E32085EF1300939D38 /* HLHHRouter.m */,
+			);
+			path = HHRouter;
+			sourceTree = "<group>";
+		};
+		4EB2A8F02085FBD300939D38 /* Pay */ = {
+			isa = PBXGroup;
+			children = (
+				4EB2A8F12085FC4D00939D38 /* HLPayVC.h */,
+				4EB2A8F22085FC4D00939D38 /* HLPayVC.m */,
+			);
+			path = Pay;
 			sourceTree = "<group>";
 		};
 		4ECB20022071C2C900102D02 = {
@@ -266,6 +291,7 @@
 		4ECB20592071C54E00102D02 /* Third */ = {
 			isa = PBXGroup;
 			children = (
+				4EB2A8E12085EF0000939D38 /* HHRouter */,
 			);
 			path = Third;
 			sourceTree = "<group>";
@@ -285,6 +311,7 @@
 			isa = PBXGroup;
 			children = (
 				4E95E1402071FFB400E82B66 /* HL_PCH_Header.h */,
+				4EB2A8E52085EF8800939D38 /* HHRouterHeader.h */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -294,6 +321,7 @@
 			children = (
 				4E95E14420720A4000E82B66 /* HLTwoVC.h */,
 				4E95E14520720A4000E82B66 /* HLTwoVC.m */,
+				4EB2A8F02085FBD300939D38 /* Pay */,
 			);
 			path = Two;
 			sourceTree = "<group>";
@@ -509,6 +537,8 @@
 				4ECB20752071CC9F00102D02 /* HLTabBarController.m in Sources */,
 				4E95E15220720E8700E82B66 /* HLBaseView.m in Sources */,
 				4E95E14F20720E7700E82B66 /* HLBaseTableView.m in Sources */,
+				4EB2A8F32085FC4D00939D38 /* HLPayVC.m in Sources */,
+				4EB2A8E42085EF1300939D38 /* HLHHRouter.m in Sources */,
 				4ECB206C2071CC2100102D02 /* HLBaseScrollView.m in Sources */,
 				4E95E14620720A4000E82B66 /* HLTwoVC.m in Sources */,
 				4E95E14920720A5000E82B66 /* HLThreeVC.m in Sources */,

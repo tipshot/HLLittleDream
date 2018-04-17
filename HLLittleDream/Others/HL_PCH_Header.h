@@ -24,3 +24,6 @@
 #define KbtnEndebleColor [UIColor colorWithRed:220/255.0 green:220/255.0 blue:220/255.0 alpha:1.0]/**按钮的禁用背景颜色*/
 //随机数字
 #define KRandomNum(x) arc4random_uniform(x)/**随机数*/
+
+
+

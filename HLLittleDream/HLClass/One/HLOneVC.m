@@ -27,7 +27,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self creatTableView];
-    self.view.backgroundColor = KRandomColor;
+    self.hlTableView.tableFooterView = [UIView new];
 }
 
 - (void)creatTableView
@@ -58,11 +58,15 @@
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
     cell.textLabel.text = self.dataArray[indexPath.row];
-    cell.backgroundColor = KRandomColor;
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"%ld",indexPath.row);
+    if (indexPath.row == 0) {
+        UIViewController *viewController = [[HHRouter shared] matchController:GaoDeToBaiDuMapName];
+        viewController.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:viewController animated:YES];
+    }
+    
 }
 @end
