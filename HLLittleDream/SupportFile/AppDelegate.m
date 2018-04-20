@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "HLTabBarController.h"
 #import "HLHHRouter.h"
+#import <AMapFoundationKit/AMapFoundationKit.h>
 @interface AppDelegate ()
 
 @end
@@ -20,6 +21,7 @@
     // Override point for customization after application launch.
     [self addTabBar];
     [self HHRouter];
+    [AMapServices sharedServices].apiKey = @"1a7f1f9106e1e8d0385816699879040a";
     return YES;
 }
 - (void)HHRouter
