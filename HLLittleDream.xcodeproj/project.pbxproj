@@ -16,6 +16,8 @@
 		4E95E162207220B000E82B66 /* GaoDeToBaiDuMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E95E161207220B000E82B66 /* GaoDeToBaiDuMap.m */; };
 		4EB2A8E42085EF1300939D38 /* HLHHRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB2A8E32085EF1300939D38 /* HLHHRouter.m */; };
 		4EB2A8F32085FC4D00939D38 /* HLPayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB2A8F22085FC4D00939D38 /* HLPayVC.m */; };
+		4EB2A8F7208F21E600939D38 /* HLGaoDeCoverAgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB2A8F5208F21E600939D38 /* HLGaoDeCoverAgeViewController.m */; };
+		4EB2A8F8208F21E600939D38 /* HLGaoDeCoverAgeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EB2A8F6208F21E600939D38 /* HLGaoDeCoverAgeViewController.xib */; };
 		4ECB202B2071C2CA00102D02 /* HLLittleDreamTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ECB202A2071C2CA00102D02 /* HLLittleDreamTests.m */; };
 		4ECB20362071C2CA00102D02 /* HLLittleDreamUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ECB20352071C2CA00102D02 /* HLLittleDreamUITests.m */; };
 		4ECB20502071C32000102D02 /* HLLittleDream.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4ECB20442071C32000102D02 /* HLLittleDream.xcdatamodeld */; };
@@ -75,6 +77,9 @@
 		4EB2A8E52085EF8800939D38 /* HHRouterHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHRouterHeader.h; sourceTree = "<group>"; };
 		4EB2A8F12085FC4D00939D38 /* HLPayVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HLPayVC.h; sourceTree = "<group>"; };
 		4EB2A8F22085FC4D00939D38 /* HLPayVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLPayVC.m; sourceTree = "<group>"; };
+		4EB2A8F4208F21E600939D38 /* HLGaoDeCoverAgeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HLGaoDeCoverAgeViewController.h; sourceTree = "<group>"; };
+		4EB2A8F5208F21E600939D38 /* HLGaoDeCoverAgeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLGaoDeCoverAgeViewController.m; sourceTree = "<group>"; };
+		4EB2A8F6208F21E600939D38 /* HLGaoDeCoverAgeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HLGaoDeCoverAgeViewController.xib; sourceTree = "<group>"; };
 		4ECB200B2071C2C900102D02 /* HLLittleDream.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HLLittleDream.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ECB201F2071C2CA00102D02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4ECB20262071C2CA00102D02 /* HLLittleDreamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HLLittleDreamTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,6 +166,9 @@
 			children = (
 				4E95E160207220B000E82B66 /* GaoDeToBaiDuMap.h */,
 				4E95E161207220B000E82B66 /* GaoDeToBaiDuMap.m */,
+				4EB2A8F4208F21E600939D38 /* HLGaoDeCoverAgeViewController.h */,
+				4EB2A8F5208F21E600939D38 /* HLGaoDeCoverAgeViewController.m */,
+				4EB2A8F6208F21E600939D38 /* HLGaoDeCoverAgeViewController.xib */,
 			);
 			path = GaoDeToBaiDu;
 			sourceTree = "<group>";
@@ -462,6 +470,7 @@
 				4ECB20542071C32000102D02 /* Main.storyboard in Resources */,
 				4ECB20512071C32000102D02 /* Assets.xcassets in Resources */,
 				4ECB20532071C32000102D02 /* LaunchScreen.storyboard in Resources */,
+				4EB2A8F8208F21E600939D38 /* HLGaoDeCoverAgeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -546,6 +555,7 @@
 				4E95E14920720A5000E82B66 /* HLThreeVC.m in Sources */,
 				4ECB20722071CC5F00102D02 /* HLBaseNavigationController.m in Sources */,
 				4ECB20502071C32000102D02 /* HLLittleDream.xcdatamodeld in Sources */,
+				4EB2A8F7208F21E600939D38 /* HLGaoDeCoverAgeViewController.m in Sources */,
 				4E95E14C20720A6600E82B66 /* HLFourVC.m in Sources */,
 				4ECB20872071D16000102D02 /* HLBaseViewController.m in Sources */,
 			);
@@ -722,7 +732,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/HLLittleDream/SupportFile/HLPrefixHeader.pch";
 				INFOPLIST_FILE = HLLittleDream/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = HLR.HLLittleDream;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -739,7 +752,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/HLLittleDream/SupportFile/HLPrefixHeader.pch";
 				INFOPLIST_FILE = HLLittleDream/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = HLR.HLLittleDream;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -753,7 +769,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6N9M5S46W5;
 				INFOPLIST_FILE = HLLittleDreamTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = HLR.HLLittleDreamTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -768,7 +788,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6N9M5S46W5;
 				INFOPLIST_FILE = HLLittleDreamTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = HLR.HLLittleDreamTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -782,7 +806,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6N9M5S46W5;
 				INFOPLIST_FILE = HLLittleDreamUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = HLR.HLLittleDreamUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -796,7 +824,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6N9M5S46W5;
 				INFOPLIST_FILE = HLLittleDreamUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = HLR.HLLittleDreamUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

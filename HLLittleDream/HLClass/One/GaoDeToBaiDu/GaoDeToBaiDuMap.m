@@ -9,8 +9,11 @@
 #import "GaoDeToBaiDuMap.h"
 #import <MAMapKit/MAMapKit.h>
 #import <AMapFoundationKit/AMapFoundationKit.h>
+#import "HLGaoDeCoverAgeViewController.h"//图层VC
 @interface GaoDeToBaiDuMap ()<MAMapViewDelegate>
-
+@property (nonatomic, strong) MAMapView *mapView;
+@property (nonatomic,strong) UIButton * SinceTheRoadsBtn;//路况按钮
+@property (nonatomic,strong) UIButton * coverageBtn;//图层按钮
 @end
 
 @implementation GaoDeToBaiDuMap
@@ -27,45 +30,77 @@
 {
     ///地图需要v4.5.0及以上版本才必须要打开此选项（v4.5.0以下版本，需要手动配置info.plist）
     [AMapServices sharedServices].enableHTTPS = YES;
-    ///初始化地图
-    MAMapView *_mapView = [[MAMapView alloc] init];
-    _mapView.delegate = self;
-    ///把地图添加至view
-    [self.view addSubview:_mapView];
-    [_mapView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.bottom.mas_equalTo(0);
+    self.mapView = [[MAMapView alloc] init];
+    [self.view addSubview:self.mapView];
+    [self.mapView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.bottom.right.mas_equalTo(0);
         make.top.mas_equalTo(64);
     }];
-    ///如果您需要进入地图就显示定位小蓝点，则需要下面两行代码
-    _mapView.showsUserLocation = YES;
-    _mapView.userTrackingMode = MAUserTrackingModeFollow;
+    self.mapView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     
-    MAUserLocationRepresentation *r = [[MAUserLocationRepresentation alloc] init];
-//    r.showsAccuracyRing = NO;///精度圈是否显示，默认YES
-//    r.showsHeadingIndicator = NO;///是否显示方向指示(MAUserTrackingModeFollowWithHeading模式开启)。默认为YES
-    r.fillColor = [UIColor redColor];///精度圈 填充颜色, 默认 kAccuracyCircleDefaultColor
-    r.strokeColor = [UIColor blueColor];///精度圈 边线颜色, 默认 kAccuracyCircleDefaultColor
-    r.lineWidth = 2;///精度圈 边线宽度，默认0
-//    r.enablePulseAnnimation = NO;///内部蓝色圆点是否使用律动效果, 默认YES
-    r.locationDotBgColor = [UIColor greenColor];///定位点背景色，不设置默认白色
-    r.locationDotFillColor = [UIColor grayColor];///定位点蓝色圆点颜色，不设置默认蓝色
-    [_mapView updateUserLocationRepresentation:r];
+    self.mapView.delegate = self;
+    [self creatSinceTheRoads];//创建路况
+    [self creatCoverageBtn];//图层按钮
 
-    
-    
 }
 
-- (MAAnnotationView *)mapView:(MAMapView *)mapView viewForAnnotation:(id<MAAnnotation>)annotation
+- (void)viewDidAppear:(BOOL)animated
 {
-    MAAnnotationView * annoView = [MAAnnotationView new];
-    annoView.backgroundColor = KRandomColor;
-    if ([annotation isKindOfClass:[MAUserLocation class]]) {
-        return annoView;
-    }else{
-        return annoView;
-    }
+    [super viewDidAppear:animated];
+    // 开启定位
+    self.mapView.showsUserLocation = YES;
+    self.mapView.userTrackingMode = MAUserTrackingModeFollow;
+
+}
+//创建路况按钮
+- (void)creatSinceTheRoads
+{
+    self.SinceTheRoadsBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.mapView addSubview:self.SinceTheRoadsBtn];
+    [self.SinceTheRoadsBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.mas_equalTo(-20);
+        make.top.mas_equalTo(70);
+        make.width.height.mas_equalTo(60);
+    }];
+    [self.SinceTheRoadsBtn setTitle:@"展示路况" forState:UIControlStateNormal];
+    [self.SinceTheRoadsBtn setTitle:@"正展示路况" forState:UIControlStateSelected];
+    [self.SinceTheRoadsBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.SinceTheRoadsBtn setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
+    self.SinceTheRoadsBtn.titleLabel.font = [UIFont systemFontOfSize:10];
+    self.SinceTheRoadsBtn.backgroundColor = KRandomColor;
+    [self.SinceTheRoadsBtn addTarget:self action:@selector(sinceTheRoadsBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)sinceTheRoadsBtnClick:(UIButton *)sender
+{
+    sender.selected = !sender.selected;
+    self.mapView.showTraffic = sender.selected;
     
 }
+//创建图层按钮
+- (void)creatCoverageBtn
+{
+    self.coverageBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.mapView addSubview:self.coverageBtn];
+    [self.coverageBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.mas_equalTo(-20);
+        make.top.mas_equalTo(self.SinceTheRoadsBtn.mas_bottom).offset(20);
+        make.width.height.mas_equalTo(60);
+    }];
+    [self.coverageBtn setTitle:@"图层" forState:UIControlStateNormal];
+    self.coverageBtn.titleLabel.font = [UIFont systemFontOfSize:10];
+    self.coverageBtn.backgroundColor = KRandomColor;
+    [self.coverageBtn addTarget:self action:@selector(coverageBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+}
+- (void)coverageBtnClick:(UIButton *)sender
+{
+    NSLog(@"%@",sender);
+    HLGaoDeCoverAgeViewController * coverAgeVC = [HLGaoDeCoverAgeViewController new];
+    [self.navigationController presentViewController:coverAgeVC animated:YES completion:nil];
+}
+
+
+
 
 
 
